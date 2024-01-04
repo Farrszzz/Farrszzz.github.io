@@ -1,0 +1,912 @@
+  /*  import google fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+  }
+  html{
+      scroll-behavior: smooth;
+  }
+
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+
+  /* all similar content styling codes */
+  section{
+      padding: 100px 0;
+  }
+  .max-width{
+      max-width: 1300px;
+      padding: 0 80px;
+      margin: auto;
+  }
+  .about, .social-media, .info h3, .connect-btn, .services, .skills, .projects, .modal, .mod, .contact, footer{
+      font-family: 'Poppins', sans-serif;
+  }
+  .about .about-content,
+  .services .serv-content,
+  .skills .skills-content,
+  .contact .contact-content{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+  }
+  section .title{
+      position: relative;
+      text-align: center;
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 60px;
+      padding-bottom: 20px;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  section .title::before{
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      width: 180px;
+      height: 3px;
+      background: #111;
+      transform: translateX(-50%);
+  }
+  section .title::after{
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      font-size: 20px;
+      color: #ed7a00;
+      padding: 0 5px;
+      background: #fff;
+      transform: translateX(-50%);
+  }
+
+  /* Contoh gaya CSS untuk logo */
+  .logo img {
+      width: 50px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+      height: 50px;
+      margin-right: 5px; /* Sesuaikan margin sesuai kebutuhan */
+  }
+  /* CSS for logo and text alignment */
+  .logo {
+      display: flex;
+      align-items: center;
+  }
+
+  .logo img {
+      margin-right: 10px; /* Jarak antara gambar logo dan teks "Portfolio" */
+  }
+
+
+  /* navbar styling */
+  .navbar{
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      padding: 30px 0;
+      font-family: 'Ubuntu', sans-serif;
+      transition: all 0.3s ease;
+  }
+  .navbar.sticky{
+      padding: 15px 0;
+      background: #ed7a00;
+  }
+  .navbar .max-width{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .navbar .logo a{
+      color: #fff;
+      font-size: 35px;
+      font-weight: 600;
+  }
+  .navbar .logo a span{
+      color: #ed7a00;
+      transition: all 0.3s ease;
+  }
+  .navbar.sticky .logo a span{
+      color: #fff;
+  }
+  .navbar .menu li{
+      list-style: none;
+      display: inline-block;
+  }
+  .navbar .menu li a{
+      display: block;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 25px;
+      transition: color 0.3s ease;
+  }
+  .navbar .menu li a:hover{
+      color: #ed7a00;
+  }
+  .navbar.sticky .menu li a:hover{
+      color: #fff;
+  }
+
+  /* menu btn styling */
+  .menu-btn{
+      color: #fff;
+      font-size: 23px;
+      cursor: pointer;
+      display: none;
+  }
+  .scroll-up-btn{
+      position: fixed;
+      height: 45px;
+      width: 42px;
+      background: #ed7a00;
+      right: 30px;
+      bottom: 10px;
+      text-align: center;
+      line-height: 45px;
+      color: #fff;
+      z-index: 9999;
+      font-size: 30px;
+      border-radius: 6px;
+      border-bottom-width: 2px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+  }
+  .scroll-up-btn.show{
+      bottom: 30px;
+      opacity: 1;
+      pointer-events: auto;
+  }
+  .scroll-up-btn:hover{
+      filter: brightness(90%);
+  }
+
+
+  /* home section styling */
+  .home{
+      display: flex;
+      background: url(images/background1.png) no-repeat center;
+      height: 100vh;
+      color: #fff;
+      min-height: 500px;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Ubuntu', sans-serif;
+  }
+  .home .max-width{
+    width: 100%;
+    display: flex;
+  }
+  .home .max-width .row{
+    margin-right: 0;
+  }
+  .home .home-content .text-1{
+      font-size: 27px;
+  }
+  .home .home-content .text-2{
+      font-size: 75px;
+      font-weight: 600;
+      margin-left: -3px;
+  }
+  .home .home-content .text-3{
+      font-size: 40px;
+      margin: 5px 0;
+  }
+  .home .home-content .text-3 span{
+      color: #ed7a00;
+      font-weight: 500;
+  }
+  .home .home-content a{
+      display: inline-block;
+      background: #ed7a00;
+      color: #fff;
+      font-size: 25px;
+      padding: 12px 36px;
+      margin-top: 20px;
+      font-weight: 400;
+      border-radius: 6px;
+      border: 2px solid #ed7a00;
+      transition: all 0.3s ease;
+  }
+  .home .home-content a:hover{
+      color: #ed7a00;
+      background: none;
+  }
+
+  /* about section styling */
+  .about .title::after,
+  .social-media .title::after{
+      content: "who i am";
+  }
+
+  .about .about-content .left{
+      width: 45%;
+  }
+  .about .about-content .left img{
+      height: 400px;
+      width: 400px;
+      object-fit: cover;
+      border-radius: 6px;
+  }
+  .about .about-content .right{
+      width: 55%;
+  }
+  .about .about-content .right .text{
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 10px;
+  }
+  .about .about-content .right .text span{
+      color: #ed7a00;
+  }
+  .about .about-content .right p{
+      text-align: justify;
+  }
+  .about .about-content .right a{
+      display: inline-block;
+      background: #ed7a00;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 10px 30px;
+      margin-top: 20px;
+      border-radius: 6px;
+      border: 2px solid #ed7a00;
+      transition: all 0.3s ease;
+  }
+  .about .about-content .right a:hover{
+      color: #ed7a00;
+      background: none;
+  }
+  .about .column.right .social-icons {
+      margin-bottom: 20px;
+  }
+
+  .about .column.right .social-icons a {
+      margin-right: 10px;
+  }
+
+  .about .column.right .social-icons a img {
+      width: 40px; /* Adjust icon size as needed */
+      height: 40px; /* Adjust icon size as needed */
+      border-radius: 50%;
+  }
+
+
+
+  /* Styling for the social media section */
+
+  .social-media .title::after{
+      content: "My SosMed";
+  }
+
+  .social-media {
+      background: url(images/background1.png);
+      padding: 100px 0;
+      color: #ed7a00;
+      font-family: 'Ubuntu', sans-serif;
+  }
+
+  .social-media .title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 60px;
+  }
+
+  .social-media .sectitle {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 500;
+      margin-top: 60px;
+  }
+
+  /* Styling for the social cards */
+
+  .social-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px; /* Jarak antara kartu */
+  }
+
+  .social-card {
+      background: #222;
+      border-radius: 6px;
+      padding: 25px;
+      text-align: center;
+      width: 200px; /* Lebar kartu */
+  }
+
+  .social-card .icon img {
+      max-width: 100px; /* Lebar maksimum ikon */
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+  }
+
+  .social-card .info h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+  }
+
+  .social-card .action .connect-btn {
+      display: block;
+      background: #ed7a00;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 15px auto 0;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+  }
+
+  .social-card .action .connect-btn:hover {
+      background: none;
+      color: #ed7a00;
+  }
+
+  @media (max-width: 768px) {
+      .social-card {
+          width: 100%; /* Kartu akan menutupi lebar penuh pada layar kecil */
+      }
+  }
+
+
+
+  /* services section styling */
+  .services, .project{
+      color:#fff;
+      background: #111;
+  }
+  .social-media .title::before,
+  .services .title::before,
+  .project .title::before{
+      background: #fff;
+  }
+  .social-media .title::after,
+  .services .title::after,
+  .project .title::after{
+      background: #111;
+      content: "what i provide";
+  }
+  .services .serv-content .card{
+      width: calc(35% - 10px);
+      background: #222;
+      text-align: center;
+      border-radius: 6px;
+      padding: 50px 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  .services .serv-content .column{
+    width: calc(50% - 30px);
+  }
+  .services .serv-content .card:hover{
+      background: #ed7a00;
+  }
+  .services .serv-content .card .box{
+      transition: all 0.3s ease;
+  }
+  .services .serv-content .card:hover .box{
+      transform: scale(1.05);
+  }
+  .services .serv-content .card i{
+      font-size: 50px;
+      color: #ed7a00;
+      transition: color 0.3s ease;
+  }
+  .services .serv-content .card:hover i{
+      color: #fff;
+  }
+  .services .serv-content .card .text{
+      font-size: 25px;
+      font-weight: 500;
+      margin: 10px 0 7px 0;
+  }
+
+/* skills section styling */
+
+.skills .title::after {
+    content: "what can i do";
+}
+
+.skills .skills-content .column {
+    width: 100%; /* Ubah lebar kolom menjadi 100% di perangkat mobile */
+    margin-bottom: 30px; /* Berikan margin bawah untuk memberi jarak antar kolom */
+}
+
+.skills .skills-content .left .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skills .skills-content .left p {
+    text-align: justify;
+}
+
+.skills .skills-content .left a {
+    display: inline-block;
+    background: #ed7a00;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #ed7a00;
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    color: #ed7a00;
+    background: none;
+}
+
+/* Styling for the icons */
+.icons {
+    display: flex;
+    flex-wrap: wrap; /* Menyusun ikon-ikon dalam baris yang dapat memanjang jika diperlukan */
+    justify-content: center; /* Membuat ikon-ikon ditengahkan secara horizontal */
+}
+
+.icon-row {
+    display: flex;
+    flex-wrap: wrap; /* Membuat ikon-ikon dalam baris yang dapat memanjang jika diperlukan */
+    justify-content: center; /* Membuat ikon-ikon ditengahkan secara horizontal */
+    margin: 0 auto; /* Mengatur margin secara otomatis untuk menengahkan ikon-ikon */
+    max-width: 300px; /* Sesuaikan lebar maksimum untuk ikon-ikon */
+}
+
+
+.theskill-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Membuat ikon-ikon di dalam baris ditengahkan secara horizontal */
+    max-width: 100%; /* Ubah lebar maksimum menjadi 100% */
+}
+
+.icon {
+    margin: 10px;
+    text-align: center;
+}
+
+/* Setel ukuran untuk ikon */
+.icon img {
+    width: 60px; /* Ubah ukuran ikon menjadi lebih kecil untuk perangkat mobile */
+    height: 60px; /* Ubah ukuran ikon menjadi lebih kecil untuk perangkat mobile */
+}
+
+/* Skill details */
+.skill-details {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 720px;
+}
+
+.skill {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    background-color: #fff; /* Warna default untuk bar */
+}
+
+.bar div.selected {
+    background-color: #ed7a00; /* Warna oranye untuk selected */
+}
+
+/* Menyembunyikan warna jika tidak ada yang selected */
+.bar div:not(.selected) {
+    background-color: #fff; /* Warna putih jika tidak selected */
+}
+
+.bar div {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 20px;
+    transition: width 0.3s ease-in-out;
+    flex-grow: 1;
+    background-color: #fff; /* Warna default untuk bar */
+}
+
+
+.skill h4 {
+    margin: 10px 0 0 10px;
+    text-align: left;
+}
+
+.bar div span {
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Mengubah warna teks pada span */
+.bar div span {
+    color: #000; /* Warna hitam untuk teks */
+}
+@media (max-width: 768px) {
+    .bar div {
+        width: calc(100% - 40px); /* Mengatur lebar bar agar lebih responsif */
+        margin-right: 0; /* Menghilangkan margin kanan */
+        margin-bottom: 5px; /* Memberikan jarak antar bar */
+    }
+}
+
+
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.orange-btn {
+  display: block;
+  padding: 8px 16px;
+  background-color: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.orange-btn:hover {
+  background-color: #d35400;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (min-width: 768px) {
+  .project-card {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: calc(33.33% - 40px);
+  }
+}
+
+
+
+
+
+
+  /* contact section styling */
+  .contact .title::after{
+      content: "get in touch";
+  }
+  .contact .contact-content .column {
+      width: 100%;
+      margin-bottom: 35px;
+  }
+  .contact .contact-content .text{
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+  }
+  .contact .contact-content .left p{
+      text-align: justify;
+  }
+  .contact .contact-content .left .icons {
+      margin: 10px 0;
+  }
+  .contact .contact-content .row {
+      display: flex;
+    margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  .contact .contact-content .row .info {
+      margin-left: 10px; /* Menghilangkan margin kiri untuk informasi */
+  }
+  .contact .contact-content .row i {
+      font-size: 25px;
+      color: #ed7a00;
+      margin-right: 10px;
+  }
+  .contact .contact-content .info {
+      display: flex;
+      flex-direction: column;
+  }
+  .contact .contact-content .info .head {
+      font-weight: 500;
+  }
+  .contact .contact-content .info .sub-title {
+      color: #333;
+      margin-top: 5px;
+  }
+  .contact .right form .fields{
+      display: flex;
+  }
+  .contact .right form .field,
+  .contact .right form .fields .field{
+      height: 45px;
+      width: 100%;
+      margin-bottom: 15px;
+  }
+  .contact .right form .textarea{
+      height: 80px;
+      width: 100%;
+  }
+  .contact .right form .name{
+      margin-right: 10px;
+  }
+  .contact .right form .field input,
+  .contact .right form .textarea textarea{
+      height: 100%;
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 6px;
+      outline: none;
+      padding: 0 15px;
+      font-size: 17px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+  }
+  .contact .right form .field input:focus,
+  .contact .right form .textarea textarea:focus{
+      border-color: #b3b3b3;
+  }
+  .contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+  }
+  .contact .right form .button-area{
+    display: flex;
+    align-items: center;
+  }
+  .right form .button-area button{
+    color: #fff;
+    display: block;
+    width: 160px!important;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    background: #ed7a00;
+    border: 2px solid #ed7a00;
+    transition: all 0.3s ease;
+  }
+/* Untuk mengatur posisi tengah dan mengurangi ukuran ikon */
+.social-icons-contact {
+    text-align: center; /* Untuk membuat ikon berada di tengah */
+}
+
+/* Mengurangi ukuran ikon */
+.social-icons-contact img {
+    width: 30px; /* Ganti nilai ini sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi otomatis menyesuaikan proporsi */
+    margin: 5px; /* Atur spasi antara ikon jika diperlukan */
+}
+
+/* Efek hover jika diperlukan (jika tidak ingin ada efek hover, Anda bisa menghapus bagian ini) */
+.social-icons-contact img:hover {
+    opacity: 0.7; /* Memberikan efek transparansi pada hover, sesuaikan sesuai kebutuhan */
+}
+
+
+
+  .right form .button-area button:hover{
+    color: #ed7a00;
+    background: none;
+  }
+  /* footer section styling */
+  footer{
+      background: #111;
+      padding: 15px 23px;
+      color: #fff;
+      text-align: center;
+  }
+  footer span a{
+      color: #ed7a00;
+      text-decoration: none;
+  }
+  footer span a:hover{
+      text-decoration: underline;
+  }
+
+
+  /* responsive media query start */
+  @media (max-width: 1104px) {
+      .about .about-content .left img{
+          height: 350px;
+          width: 350px;
+      }
+  }
+
+  @media (max-width: 991px) {
+      .max-width{
+          padding: 0 50px;
+      }
+  }
+  @media (max-width: 947px){
+      .menu-btn{
+          display: block;
+          z-index: 999;
+      }
+      .menu-btn i.active:before{
+          content: "\f00d";
+      }
+      .navbar .menu{
+          position: fixed;
+          height: 100vh;
+          width: 100%;
+          left: -100%;
+          top: 0;
+          background: #111;
+          text-align: center;
+          padding-top: 80px;
+          transition: all 0.3s ease;
+      }
+      .navbar .menu.active{
+          left: 0;
+      }
+      .navbar .menu li{
+          display: block;
+      }
+      .navbar .menu li a{
+          display: inline-block;
+          margin: 20px 0;
+          font-size: 25px;
+      }
+      .home .home-content .text-2{
+          font-size: 70px;
+      }
+      .home .home-content .text-3{
+          font-size: 35px;
+      }
+      .home .home-content a{
+          font-size: 23px;
+          padding: 10px 30px;
+      }
+      .max-width{
+          max-width: 930px;
+      }
+      .about .about-content .column{
+          width: 100%;
+      }
+      .about .about-content .left{
+          display: flex;
+          justify-content: center;
+          margin: 0 auto 60px;
+      }
+      .about .about-content .right{
+          flex: 100%;
+      }
+      .services .serv-content .card{
+          width: calc(50% - 10px);
+          margin-bottom: 20px;
+      }
+      .skills .skills-content .column,
+      .contact .contact-content .column{
+          width: 100%;
+          margin-bottom: 35px;
+      }
+  }
+
+  @media (max-width: 690px) {
+      .max-width{
+          padding: 0 23px;
+      }
+      .home .home-content .text-2{
+          font-size: 60px;
+      }
+      .home .home-content .text-3{
+          font-size: 32px;
+      }
+      .home .home-content a{
+          font-size: 20px;
+      }
+      .services .serv-content .card{
+          width: 100%;
+      }
+  }
+
+  @media (max-width: 500px) {
+      .home .home-content .text-2{
+          font-size: 50px;
+      }
+      .home .home-content .text-3{
+          font-size: 27px;
+      }
+      .about .about-content .right .text,
+      .skills .skills-content .left .text{
+          font-size: 19px;
+      }
+      .contact .right form .fields{
+          flex-direction: column;
+      }
+      .contact .right form .name,
+      .contact .right form .email{
+          margin: 0;
+      }
+      .right form .error-box{
+         width: 150px;
+      }
+      .scroll-up-btn{
+          right: 15px;
+          bottom: 15px;
+          height: 38px;
+          width: 35px;
+          font-size: 23px;
+          line-height: 38px;
+      }
+  }
+
+
+
